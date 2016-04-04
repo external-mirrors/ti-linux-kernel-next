@@ -1134,7 +1134,7 @@ static int davinci_mcasp_hw_params(struct snd_pcm_substream *substream,
 	if (mcasp->op_mode == DAVINCI_MCASP_IIS_MODE)
 		mcasp->channels = channels;
 
-	return 0;
+	return davinci_mcasp_set_dai_fmt(cpu_dai, mcasp->dai_fmt);
 }
 
 static int davinci_mcasp_trigger(struct snd_pcm_substream *substream,
