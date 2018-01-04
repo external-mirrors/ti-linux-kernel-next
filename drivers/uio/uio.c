@@ -853,7 +853,7 @@ int __uio_register_device(struct module *owner,
 		 * freed until they are released.
 		 */
 		ret = request_irq(info->irq, uio_interrupt,
-				  info->irq_flags, info->name, idev);
+				  info->irq_flags | IRQF_NO_THREAD, info->name, idev);
 		if (ret)
 			goto err_request_irq;
 	}
