@@ -155,6 +155,7 @@ struct prueth_emac {
  * @fw_data: firmware names to be used with PRU remoteprocs
  * @hs: firmware handshake data per slice
  * @miig_rt: regmap to mii_g_rt block
+ * @pruss_id: PRUSS instance id
  */
 struct prueth {
 	struct device *dev;
@@ -171,6 +172,7 @@ struct prueth {
 	const struct prueth_private_data *fw_data;
 	struct icss_hs hs[PRUSS_NUM_PRUS];
 	struct regmap *miig_rt;
+	int pruss_id;
 };
 
 bool icss_hs_is_fw_dead(struct prueth *prueth, int slice, u16 *err_code);
