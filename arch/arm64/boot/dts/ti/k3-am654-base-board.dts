@@ -453,6 +453,9 @@
 };
 
 &davinci_mdio {
+	reset-gpios = <&pca9555 4 GPIO_ACTIVE_LOW>;
+	reset-delay-us = <2>;
+
 	phy0: ethernet-phy@0 {
 		reg = <0>;
 		/* TODO: phy reset: TCA9555RTWR(i2c:0x21)[p04].GPIO_MCU_RGMII_RSTN */
