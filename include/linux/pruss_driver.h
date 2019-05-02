@@ -39,6 +39,7 @@ struct pruss_intc_config {
 /**
  * struct pruss - PRUSS parent structure
  * @dev: pruss device pointer
+ * @id: pruss instance id
  * @cfg_base: base iomap for CFG region
  * @cfg: regmap for config region
  * @mem_regions: data for each of the PRUSS memory regions
@@ -47,6 +48,7 @@ struct pruss_intc_config {
  */
 struct pruss {
 	struct device *dev;
+	u32 id;
 	void __iomem *cfg_base;
 	struct regmap *cfg;
 	struct pruss_mem_region mem_regions[PRUSS_MEM_MAX];
