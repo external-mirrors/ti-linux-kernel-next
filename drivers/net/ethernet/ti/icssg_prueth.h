@@ -161,6 +161,7 @@ struct prueth_emac {
  * @fw_data: firmware names to be used with PRU remoteprocs
  * @config: firmware load time configuration per slice
  * @miig_rt: regmap to mii_g_rt block
+ * @pruss_id: PRUSS instance id
  */
 struct prueth {
 	struct device *dev;
@@ -178,6 +179,7 @@ struct prueth {
 	struct icssg_config config[PRUSS_NUM_PRUS];
 	struct regmap *miig_rt;
 	struct regmap *mii_rt;
+	int pruss_id;
 };
 
 struct emac_tx_ts_response {
