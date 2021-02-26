@@ -540,6 +540,7 @@ static void rpmsg_chrdev_remove(struct rpmsg_device *rpdev)
 
 static const struct rpmsg_device_id rpmsg_char_id_table[] = {
 	{ .name	= "rpmsg_chrdev" },
+	{ .name = "ti.ipc4.ping-pong" },
 	{ },
 };
 MODULE_DEVICE_TABLE(rpmsg, rpmsg_char_id_table);
